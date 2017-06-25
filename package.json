@@ -1,0 +1,13 @@
+{
+  "name": "wallet-exporter",
+  "description": "Exports wallet transaction list",
+  "version": "0.0.1",
+  "author": "Justin Langston <nitsujlangston@gmail.com>",
+  "main": "walletExporter",
+  "dependencies": {
+    "async": "^2.1.4",
+    "request": "^2.79.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {}
+}

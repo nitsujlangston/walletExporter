@@ -61,17 +61,17 @@ function listTransactions(height, callback){
           _.each(inputs, function(input){
             if (_.contains(walletAddresses, input.address)){
               sendingTransaction = true;
-              console.log({height: height, txid:txid, category:'sent', address: input.address, satoshis: -input.value});
+              console.log(JSON.stringify({height: height, txid:txid, category:'sent', address: input.address, satoshis: -input.value}));
             }
           });
           if (sendingTransaction){
             var totalInputValue = _.reduce(inputs, function (memo, input) { return memo + input.value; }, 0);
             var totalOutputValue = _.reduce(outputs, function (memo, output) { return memo + output.value; }, 0);
-            console.log({ height: height, txid: txid, category: 'fee', satoshis: totalOutputValue - totalInputValue });
+            console.log(JSON.stringify({ height: height, txid: txid, category: 'fee', satoshis: totalOutputValue - totalInputValue }));
           }
           _.each(outputs, function (output) {
             if (_.contains(walletAddresses, output.address)) {
-              console.log({ height: height, txid: txid, category: 'received', address: output.address, satoshis:output.value });
+              console.log(JSON.stringify({ height: height, txid: txid, category: 'received', address: output.address, satoshis:output.value }));
             }
           });
 
